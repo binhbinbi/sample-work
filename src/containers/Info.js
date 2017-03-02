@@ -94,6 +94,7 @@ export default class Info extends Component {
             {/*//opening hours*/}
             <div className="subpanel panel-body">
                 <table className="table">
+                <tbody>
                     <tr>
                         <td><h2 className='open-hour'>{"Opening Hours"}</h2></td>
                         <td className="verticalLine"><h4 className='open-spec'>{"Seasonal Opening Hours"}</h4></td>
@@ -102,6 +103,7 @@ export default class Info extends Component {
                         <td className="align-top"><div className="hours">{<OpenHours/>}</div></td>
                         <td className="align-top verticalLine"><div className="pad-40 spec">{<OpenSpec/>}</div></td>
                     </tr>
+                </tbody>
                 </table>
 
             </div>
