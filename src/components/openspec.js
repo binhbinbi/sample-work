@@ -25,7 +25,6 @@ export default class OpenSpec extends Component {
     this.removeTime = this.removeTime.bind(this);
   }
   click(evt, index){
-    console.log(index)
     var position = $('#add-'+index).position()
     var spec_position = $('#spec').position()
     var tmp_position = {top: position.top, left:position.left+spec_position.left-150}
@@ -36,8 +35,6 @@ export default class OpenSpec extends Component {
     this.setState({dis: false})
   }
   setTime(key, start, end){
-    console.log(start+"  "+end)
-    console.log(key)
     var date_time = [...this.state.date_time]
     date_time[key].time.push({time_open: start, time_close: end})
     this.setState({date_time: date_time})

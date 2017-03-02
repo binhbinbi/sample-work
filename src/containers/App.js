@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Info from "./Info";
+import Blank from "./Blank";
 
 
 class App extends Component {
@@ -10,10 +11,13 @@ class App extends Component {
     this.state = {
       images: [],
       menu: 'detail',
-      menuOpen: false
+      menuOpen: false,
+      menu_page: "GENERAL INFO"
     }
   }
   render() {
+    var page = "";
+
     var details = [
                     {name: "Store Name", value: "Milton Keynes", type: 'readonly'},
                     {name: "SID", value: "GB01101001"},
@@ -28,7 +32,14 @@ class App extends Component {
     var images = this.state.images;
     var store_detail = {details: details, images: images}
     var menu = this.state.menu;
-    var store_name = "Milton Keynes (SID: GB01101001)"
+    var store_name = "Milton Keynes (SID: GB01101001)";
+    switch(this.state.menu_page){
+        case "GENERAL INFO":
+            page =  (<Info store_detail={store_detail}/>)
+            break;
+        default:
+            page = (<Blank />)
+    }
     return (
       <div className="">
         <div className='panel' id=''>
@@ -37,12 +48,12 @@ class App extends Component {
                 <img id='imgmenu' src={require("../img/menu.png")} onClick={()=>{this.setState({menuOpen:!this.state.menuOpen})}}/>
                 {this.state.menuOpen?(
                     <div className="menu">
-                        <a href="#">Page 1...........</a>
-                        <a href="#">Page 2...........</a>
-                        <a href="#">Page 3...........</a>
-                        <a href="#">Page 4...........</a>
-                        <a href="#">Page 5...........</a>
-                        <a href="#">Page 6...........</a>
+                        <a className="link">Page 1...........</a>
+                        <a className="link">Page 2...........</a>
+                        <a className="link">Page 3...........</a>
+                        <a className="link">Page 4...........</a>
+                        <a className="link">Page 5...........</a>
+                        <a className="link">Page 6...........</a>
                     </div>
                 ):""}
                 {"STORE NAME: "+store_name}
@@ -62,16 +73,15 @@ class App extends Component {
             </div>
             <div id='hmenu'>
                 <ul>
-                    <li><a href="">{"GENERAL INFO"}</a></li>
-                    <li><a href="">{"INVENTORY"}</a></li>
-                    <li><a href="">{"STOCK"}</a></li>
-                    <li><a href="">{"USERS"}</a></li>
-                    <li><a href="">{"SETTING"}</a></li>
+                    <li><a className="link" onClick={()=>{this.setState({menu_page: "GENERAL INFO"})}}>{"GENERAL INFO"}</a></li>
+                    <li><a className="link" onClick={()=>{this.setState({menu_page: "INVENTORY"})}}>{"INVENTORY"}</a></li>
+                    <li><a className="link" onClick={()=>{this.setState({menu_page: "STOCK"})}}>{"STOCK"}</a></li>
+                    <li><a className="link" onClick={()=>{this.setState({menu_page: "USERS"})}}>{"USERS"}</a></li>
+                    <li><a className="link" onClick={()=>{this.setState({menu_page: "SETTING"})}}>{"SETTING"}</a></li>
                 </ul>
             </div>
         </div>
-        { <Info store_detail={store_detail}/>
-        }
+        {page}
 
       </div>
     );

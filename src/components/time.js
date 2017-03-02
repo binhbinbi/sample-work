@@ -27,7 +27,7 @@ export default class Time extends Component {
             <div className="pad-20 btn-group w-150 ">
                 <DateTimeField dateTime={this.state.end} format={format} onChange={(evt)=>{this.setState({end: evt}); put_time(this.state.start, end)}} mode="time"/>
             </div>
-            <img className="btn-remove" src={require("../img/close_blue.png")} onClick={()=>{console.log(key_in +"   "+ index); removeTime(key_in, index)}}/>
+            <img className="btn-remove" src={require("../img/close_blue.png")} onClick={()=>{removeTime(key_in, index)}}/>
         </div>
     );
   }

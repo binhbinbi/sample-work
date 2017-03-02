@@ -27,18 +27,13 @@ export default class OpenHours extends Component {
     this.setState({dis: false})
   }
   setTime(key, start, end){
-    console.log(start+"  "+end)
-    console.log(key)
     var days = Object.assign({},this.state.days)
     days[key].time.push({time_open: start, time_close: end})
     this.setState({days: days})
   }
 
   click(evt, index, key){
-    console.log(index)
     var position = $('#add-'+index).position()
-    console.log(position)
-
     this.setState({position: position, dis:true, modal_index: key})
   }
 
@@ -60,7 +55,6 @@ export default class OpenHours extends Component {
             <table>
             <tbody>
                 {Object.keys(days).map((key, index) => {
-                console.log(index)
                     return (
                         <tr key={index}>
                             <td className="align-top">
