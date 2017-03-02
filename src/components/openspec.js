@@ -60,12 +60,10 @@ export default class OpenSpec extends Component {
         self.setState({start_time: start_time, end_time: end_time});
     }
     function put_date(date){
-        console.log(date)
         self.setState({date: date})
     }
     var date_time = this.state.date_time;
     var date = this.state.date;
-    console.log(this.state)
     return (
         <div id={"spec"}>
             <AddHours index={this.state.modal_index} position={this.state.position} visible={this.state.dis} closeModal={this.closeModal} setTime={this.setTime}/>
