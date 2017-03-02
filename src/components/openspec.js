@@ -13,7 +13,6 @@ export default class OpenSpec extends Component {
     super(props, context);
     this.state = {dis: false, position: {top: "", left: ""}, modal_index:"",
         date_time: [
-            {date:'25/12', time:[{time_open:'11:30', time_close: '15:30'}]},
             {date:'25/12', time:[{time_open:'11:30', time_close: '15:30'}]}
         ],
         start_time: "00:00",
@@ -67,7 +66,7 @@ export default class OpenSpec extends Component {
     return (
         <div id="spec">
             <AddHours index={this.state.modal_index} position={this.state.position} visible={this.state.dis} closeModal={this.closeModal} setTime={this.setTime}/>
-            <table>
+            <table className="t-table">
             <tbody>
                 {date_time.map((item, index) => {
                     return(
@@ -102,7 +101,7 @@ export default class OpenSpec extends Component {
                 })}
             </tbody>
             </table>
-            <div className="bottom">
+            <div className="m-bottom">
                 <div className="inline">
                     <div className="btn-group w-120">
                         <DateTimeField dateTime={date} format={"DD/MM"} inputFormat={"DD/MM"} onChange={(evt)=>{this.setState({tmp_date:evt}); put_date(evt)}} mode="datetime"/>

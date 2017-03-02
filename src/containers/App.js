@@ -71,7 +71,7 @@ class App extends Component {
                           menu_class = "n-active"
                         }
                         return (<li key={index} className={mn_active?"active":""}><a className={menu_class} onClick={()=>{this.setState({active_menu:index});}}>
-                         <div className={mn_active?"item-active":"item"}>{menu}</div></a></li>
+                         <div className={mn_active?menu_class+" item-active":menu_class+" item"}>{menu}</div></a></li>
                             )
                       })
                       }
