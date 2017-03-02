@@ -12,9 +12,12 @@ class App extends Component {
       images: [],
       menu: 'detail',
       menuOpen: false,
-      menu_page: "GENERAL INFO"
+      menu_page: "GENERAL INFO",
+      mn_active: false
     }
   }
+
+
   render() {
     var page = "";
 
@@ -40,23 +43,41 @@ class App extends Component {
         default:
             page = (<Blank />)
     }
+    var home_active = ""
+    if (this.state.active_menu == null){
+      home_active = "active"
+    }
+    var menu_active = ""
+    if (this.state.active_menu == -1){
+      menu_active = "active"
+    }
+    var menus = ['HOME', 'SETTING', 'DETAIL']
+    var mn_active = this.state.mn_active
     return (
-      <div className="">
+      <div className={mn_active?"body-active":"body"}>
         <div className='panel' id=''>
             <div className=''>
                 <div id='name'>
-                <img id='imgmenu' src={require("../img/menu.png")} onClick={()=>{this.setState({menuOpen:!this.state.menuOpen})}}/>
-                {this.state.menuOpen?(
-                    <div className="menu">
-                        <a className="link">Page 1...........</a>
-                        <a className="link">Page 2...........</a>
-                        <a className="link">Page 3...........</a>
-                        <a className="link">Page 4...........</a>
-                        <a className="link">Page 5...........</a>
-                        <a className="link">Page 6...........</a>
-                    </div>
-                ):""}
-                {"STORE NAME: "+store_name}
+
+                <img id='imgmenu' className={mn_active?"active":""} src={require("../img/menu.png")} onClick={()=>{this.setState({mn_active: !this.state.mn_active})}}/>
+                <div className="inline">
+                        {"STORE NAME: "+store_name}
+                </div>
+                <div  className={mn_active?"menu-slide-active":""}>
+                    <ul className="" className={mn_active?"nav-active":""}>
+                      {menus.map((menu, index)=>{
+                        var menu_class = ""
+                        if (index == this.state.active_menu){
+                          menu_class = "n-active"
+                        }
+                        return (<li key={index} className={mn_active?"active":""}><a className={menu_class} onClick={()=>{this.setState({active_menu:index});}}>
+                         <div className={mn_active?"item-active":"item"}>{menu}</div></a></li>
+                            )
+                      })
+                      }
+                    </ul>
+                </div>
+
                 </div>
                 <div id='profile'>
                     <div className="marb100">
@@ -81,8 +102,9 @@ class App extends Component {
                 </ul>
             </div>
         </div>
+        <div className={mn_active?"r-active":""}>
         {page}
-
+        </div>
       </div>
     );
   }

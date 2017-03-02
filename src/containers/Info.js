@@ -97,11 +97,11 @@ export default class Info extends Component {
                 <tbody>
                     <tr>
                         <td><h2 className='open-hour'>{"Opening Hours"}</h2></td>
-                        <td className="verticalLine"><h4 className='open-spec'>{"Seasonal Opening Hours"}</h4></td>
+                        <td className="verticalLine"><h4 className='open-spec text-center'>{"Seasonal Opening Hours"}</h4></td>
                     </tr>
                     <tr>
-                        <td className="align-top"><div className="hours">{<OpenHours/>}</div></td>
-                        <td className="align-top verticalLine"><div className="pad-40 spec">{<OpenSpec/>}</div></td>
+                        <td className=" open-hour align-top"><div className="hours">{<OpenHours/>}</div></td>
+                        <td className="align-top verticalLine"><div className="pad-40 text-center">{<OpenSpec/>}</div></td>
                     </tr>
                 </tbody>
                 </table>

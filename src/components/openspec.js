@@ -65,7 +65,7 @@ export default class OpenSpec extends Component {
     var date_time = this.state.date_time;
     var date = this.state.date;
     return (
-        <div id={"spec"}>
+        <div id="spec">
             <AddHours index={this.state.modal_index} position={this.state.position} visible={this.state.dis} closeModal={this.closeModal} setTime={this.setTime}/>
             <table>
             <tbody>
@@ -102,16 +102,16 @@ export default class OpenSpec extends Component {
                 })}
             </tbody>
             </table>
-            <div>
+            <div className="bottom">
                 <div className="inline">
-                    <div className="btn-group w-full">
+                    <div className="btn-group w-120">
                         <DateTimeField dateTime={date} format={"DD/MM"} inputFormat={"DD/MM"} onChange={(evt)=>{this.setState({tmp_date:evt}); put_date(evt)}} mode="datetime"/>
                     </div>
                 </div>
                 <div className="inline">
                     <Time time={time} put_time={put_time}/>
                 </div>
-                <button className="pad-20" onClick={()=>{var date_time = [...this.state.date_time]; date_time.push({date:this.state.date, time:[{time_open:this.state.start_time, time_close: this.state.end_time}]}); this.setState({date_time:date_time, date: "01/01", start_time:"00:00", end_time: "00:00"})}}> {"ADD"}</button>
+                <button className="pad-20 inline" onClick={()=>{var date_time = [...this.state.date_time]; date_time.push({date:this.state.date, time:[{time_open:this.state.start_time, time_close: this.state.end_time}]}); this.setState({date_time:date_time, date: "01/01", start_time:"00:00", end_time: "00:00"})}}> {"ADD"}</button>
             </div>
         </div>
     );

@@ -17,8 +17,8 @@ html {
 
 .subpanel{
     margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
     background-color: #FFFFFF;
     position: relative;
 }
@@ -30,10 +30,7 @@ body {
   background: #F7F4F3 !important;
 }
 
-a {
-  color: #07CED1;
-  text-decoration: none;
-}
+
 
 a:hover {
   color: #07CED1;
@@ -318,23 +315,6 @@ a:hover {
 .page-content {
   display: -webkit-inline-box;
   width: auto;
-}
-
-#sidebar_menu li a, .sidebar-nav li a {
-  color: #fff;
-  display: block;
-  float: left;
-  text-decoration: none;
-  width: 200px;
-  background: #07CED1;
-  -webkit-transition: background .5s;
-  -moz-transition: background .5s;
-  -o-transition: background .5s;
-  -ms-transition: background .5s;
-  transition: background .5s;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
 }
 
 .sidebar_name {
@@ -1535,9 +1515,6 @@ form {
   font-size: 14px;
 }
 
-.table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
-  padding: 0px;
-}
 
 .timepicker-picker .btn {
   margin-right: 0;
@@ -1920,11 +1897,10 @@ span.multiselect-native-select select {
 }
 
 .open-spec {
-    float: right;
-    margin-right: 200px;
+    text-align:center;
 }
 .open-hour{
-    width: 600px;
+    width: 800px;
 }
 
 .cursor {
@@ -1939,9 +1915,7 @@ span.multiselect-native-select select {
     margin-left: 40px;
 }
 
-.verticalLine {
-  border-left: thick solid #000000;
-}
+
 
 .w-150{
     width: 100px;
@@ -1959,7 +1933,7 @@ span.multiselect-native-select select {
 }
 
 .modal-addhours{
-    height: 120px;
+    height: 150px;
     width: 220px;
     top: 0%;
     right: 0%;
@@ -2060,4 +2034,105 @@ td.text{
 
 .table{
     width: 100%;
+}
+
+.alert{
+    color: #EF9E43;
+}
+.menu-slide-active {
+  width: 180px;
+  top: 0px;
+  margin-left:-20px;
+  background: #BEA9A9;
+  position: fixed;
+  height: 100%;
+  z-index: 10000;
+  transition: all .4s ease 0s;
+}
+.menu-slide {
+  width: 180px;
+  top: 0px;
+  margin-left:-1220px;
+  background: #BEA9A9;
+  position: fixed;
+  height: 100%;
+  z-index: 10000;
+  transition: all .4s ease 0s;
+}
+
+.nav-active {
+  margin-top: 100px;
+  display: block;
+  float: left;
+  width: 180px;
+  list-style: none;
+  margin-left: -20px;
+  color: #BEA9A9;
+  padding: 0;
+}
+.nav {
+  margin-top: 100px;
+  margin-left:-1220px;
+  display: block;
+  float: left;
+  width: 180px;
+  list-style: none;
+  margin-left: 0;
+  color: #BEA9A9;
+  padding: 0;
+}
+
+
+.body-active {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 160px;
+  width: 100%;
+  height: 100%;
+  background: #F7F4F3 !important;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #F7F4F3 !important;
+}
+.active {
+    margin-left:160px;
+    cursor: pointer;
+}
+.item{
+    font-weight:bold;
+    font-size:20px;
+    margin-left:-160px;
+    margin-top: 40px;
+}
+.item-active{
+    font-weight:bold;
+    font-size:20px;
+    margin-left:-90px;
+    margin-top: 40px;
+}
+.r-active{
+    margin-right:160px;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 50px;
+    float: right;
+}
+
+.float-l{
+    float: left !important;
+}
+
+.verticalLine {
+  border-left: thick solid #000000;
+}
+
+.text-center{
+    text-align:center;
+}
+.n-active{
+    color: #000000;
 }
